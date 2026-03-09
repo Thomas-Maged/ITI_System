@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<div class="container mt-5">
+
+    <h1 class="mb-4">Privacy & Usage Policy</h1>
+
+    <p class="lead text-muted">
+        ITI_System is an educational management platform designed to organize students,
+        departments, and courses while ensuring secure access through a role-based
+        authorization system.
+    </p>
+
+    <hr class="my-4" />
+
+    <h4>Account Creation Policy</h4>
+
+    <p>
+        To maintain the security and integrity of the platform, account creation follows
+        a controlled policy:
+    </p>
+
+    <ul>
+        <li><strong>Students</strong> can register and create their own accounts.</li>
+        <li><strong>Instructor accounts</strong> are created only by administrators.</li>
+        <li><strong>Administrator accounts</strong> are created and managed by existing administrators.</li>
+        <li>Users are not allowed to assign roles to themselves during registration.</li>
+    </ul>
+
+    <hr class="my-4" />
+
+    <h4>Role-Based Access Control</h4>
+
+    <p>
+        Access to system features is determined by the user's assigned role.
+        Each role has specific permissions within the system.
+    </p>
+
+    <h5 class="mt-4">Administrator</h5>
+    <p>Administrators have full control over the system and can manage all core entities.</p>
+
+    <ul>
+        <li><strong>Courses:</strong> View, show details, add, update, and delete courses.</li>
+        <li><strong>Departments:</strong> View, show details, add, update, and delete departments.</li>
+        <li><strong>Students:</strong> View, add, and delete students.</li>
+        <li><strong>User Management:</strong> Create new users and assign roles (Administrator or Instructor).</li>
+    </ul>
+
+    <h5 class="mt-4">Instructor</h5>
+    <p>Instructors manage academic activities related to their assigned courses.</p>
+
+    <ul>
+        <li><strong>Courses:</strong> View courses, show course details, update course information, and manage student marks within the course.</li>
+        <li><strong>Departments:</strong> View departments and see department details.</li>
+    </ul>
+
+    <h5 class="mt-4">Student</h5>
+    <p>Students have limited access to view their academic information.</p>
+
+    <ul>
+        <li><strong>Courses:</strong> View courses and course details.</li>
+        <li><strong>Departments:</strong> View departments and department details.</li>
+    </ul>
+
+    <hr class="my-4" />
+
+    <h4>Data Protection</h4>
+
+    <p>
+        ITI_System restricts access to sensitive operations using role-based authorization.
+        Users are only allowed to perform actions that correspond to their assigned roles.
+        All users are expected to use the platform responsibly and respect the privacy
+        and academic information of others.
+    </p>
+
+</div>

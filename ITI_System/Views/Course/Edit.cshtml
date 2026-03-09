@@ -1,0 +1,45 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit @Model.Name Course</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-controller="Course" asp-action="Edit" method="post">
+
+
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label class="fw-bold">ID</label>
+                        <input readonly class="form-control bg-light" asp-for="CrsID"></input>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="fw-bold">Name</label>
+                        <input class="form-control bg-light" asp-for="Name"></input>
+                        <span asp-validation-for="Name"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="fw-bold">Duration</label>
+                        <input class="form-control bg-light" asp-for="Duration"></input>
+                        <span asp-validation-for="Duration"></span>
+                    </div>
+
+                </div>
+
+                <div class="card-footer text-end">
+                    <input type="submit" class="btn btn-warning" value="Edit"></input>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+

@@ -1,0 +1,57 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "Details";
+    string deptName = ViewBag.deptName;
+}
+
+<h1>@Model.Name Department Details</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label class="fw-bold">ID</label>
+                        <input disabled class="form-control bg-light" asp-for="DeptID"></input>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="fw-bold">Name</label>
+                        <input disabled class="form-control bg-light" asp-for="Name"></input>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="fw-bold">Capacity</label>
+                        <input disabled class="form-control bg-light" asp-for="Capacity"></input>
+                    </div>
+
+                </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover text-center align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Course ID</th>
+                            <th>Course Name</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(Course crs in Model.Courses)
+                        {
+                            <tr>
+                                <td>@crs.CrsID</td>
+                                <td>@crs.Name</td>
+                                <td>@crs.Duration</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

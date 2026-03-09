@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ITI_Entities/ITI_Entities.csproj" />
+  <Project Path="ITI_System/ITI_System.csproj" Id="b8c82289-29ea-4efb-9df4-bcf779a6d8e6" />
+</Solution>

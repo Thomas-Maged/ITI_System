@@ -1,0 +1,32 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.Name Course Details</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card-body">
+
+                <div class="mb-3">
+                    <label class="fw-bold">ID</label>
+                    <input disabled class="form-control bg-light" asp-for="CrsID"></input>
+                </div>
+
+                <div class="mb-3">
+                    <label class="fw-bold">Name</label>
+                    <input disabled class="form-control bg-light" asp-for="Name"></input>
+                </div>
+
+                <div class="mb-3">
+                    <label class="fw-bold">Duration</label>
+                    <input disabled class="form-control bg-light" asp-for="Duration"></input>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

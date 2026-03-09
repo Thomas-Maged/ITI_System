@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Course>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Courses</h1>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Duration</th>
+        @if (User.IsInRole("Admin"))
+        {
+            <th></th>
+        }
+        <th></th>
+        @if (User.IsInRole("Admin"))
+        {
+            <th></th>
+        }
+        @if (User.IsInRole("Instructor"))
+        {
+            <th></th>
+        }
+
+    </tr>
+    @foreach (Course crs in @Model)
+    {
+        <tr>
+            <td>@crs.CrsID</td>
+            <td>@crs.Name</td>
+            <td>@crs.Duration</td>
+            @if (User.IsInRole("Admin"))
+            {
+            <td>
+                <a asp-route-crsID="@crs.CrsID" class="btn btn-danger" asp-controller="Course" asp-action="Delete">Delete</a>
+            </td>
+            }
+            <td>
+                <a asp-route-crsID="@crs.CrsID" class="btn btn-info" asp-controller="Course" asp-action="Details">Details</a>
+            </td>
+            @if (User.IsInRole("Admin"))
+            {
+            <td>
+                <a asp-route-crsID="@crs.CrsID" class="btn btn-warning" asp-controller="Course" asp-action="Edit">Edit</a>
+            </td>
+            }
+            @if (User.IsInRole("Instructor"))
+            {
+            <td>
+                <a asp-route-crsID="@crs.CrsID" class="btn btn-warning" asp-controller="Course" asp-action="EditDegrees">Student Degrees</a>
+            </td>
+            }
+        </tr>
+    }
+</table>
+
+@if(User.IsInRole("Admin"))
+{
+<div class="d-grid gap-2">
+    <a class="btn btn-primary" type="button" asp-action="Create" asp-controller="Course">Add Course</a>
+</div>
+}

@@ -1,0 +1,69 @@
+﻿@model StudentCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+    SelectList departments = new SelectList(ViewBag.Departments, "DeptID", "Name");
+}
+
+<h1>Create Student</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="card shadow">
+
+                
+
+                <!-- Form Body -->
+                <div class="card-body">
+
+                    <form method="post">
+
+                        <!-- Name -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Name</label>
+                            <input type="text" class="form-control" placeholder="Enter student name" asp-for="Name">
+                            <span asp-validation-for="Name"></span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email</label>
+                            <input type="email" class="form-control" placeholder="Enter student email" asp-for="Email">
+                            <span asp-validation-for="Email"></span>
+                        </div>
+
+                        <!-- Age -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Age</label>
+                            <input type="number" class="form-control" placeholder="Enter student age"asp-for="Age">
+                            <span asp-validation-for="Age"></span>
+                        </div>
+
+                        <!-- Department Dropdown -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Department</label>
+                            <select class="form-select" asp-items="departments" asp-for="DeptID">
+                                
+                            </select>
+                        </div>
+                        <!-- Footer -->
+                        <div class="d-grid gap-2">
+                            <input type="submit" class="btn btn-primary" value="Create"></input>
+                        </div>
+                    </form>
+
+                </div>
+
+                
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+
+}

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Department>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Departments</h1>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Capacity</th>
+        @if(User.IsInRole("Admin"))
+        {
+        <th></th>
+        }
+        <th></th>
+        @if (User.IsInRole("Admin"))
+        {
+            <th></th>
+        }
+    </tr>
+    @foreach(Department dept in @Model)
+    {
+        <tr>
+            <td>@dept.DeptID</td>
+            <td>@dept.Name</td>
+            <td>@dept.Capacity</td>
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
+                    <a asp-route-deptID="@dept.DeptID" class="btn btn-danger" asp-controller="Department" asp-action="Delete">Delete</a>
+                </td>
+            }
+            <td>
+                <a asp-route-deptID="@dept.DeptID" class="btn btn-info" asp-controller="Department" asp-action="Details">Details</a>
+            </td>
+            @if(User.IsInRole("Admin"))
+            {
+            <td>
+                <a asp-route-deptID="@dept.DeptID" class="btn btn-warning" asp-controller="Department" asp-action="Edit">Edit</a>
+            </td>
+            }
+        </tr>
+    }
+</table>
+@if (User.IsInRole("Admin"))
+{
+<div class="d-grid gap-2">
+    <a class="btn btn-primary" type="button" asp-action="Create" asp-controller="Department">Add Department</a>
+</div>
+}

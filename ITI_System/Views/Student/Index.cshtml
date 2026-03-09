@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Student>
+@using ITI_Entities.Repo
+@using ITI_Entities.Data
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Students</h1>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Department</th>
+        <th></th>
+    </tr>
+@foreach(Student student in @Model)
+{
+    <tr>
+        <td>@student.ID</td>
+        <td>@student.Name</td>
+        <td>@student.Age</td>
+            @{
+                ITI_Context db = new ITI_Context();
+                DepartmentRepo deptRepo = new DepartmentRepo(db);
+                Department department = deptRepo.GetByID(student.DeptID);
+        }
+        <td>@department.Name</td>
+        <td>
+            <a asp-route-id="@student.ID" class="btn btn-danger" asp-controller="Student" asp-action="Delete">Delete</a>
+        </td>
+    </tr>    
+}
+</table>
+<div class="d-grid gap-2">
+    <a class="btn btn-primary" type="button" asp-action="Create" asp-controller="Student">Add Student</a>
+</div>
+
