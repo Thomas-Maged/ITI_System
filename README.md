@@ -14,13 +14,16 @@
   - View, add, and delete **students**.
   - Add new users with roles (**Instructor**, **Admin**).  
   - **Note:** When a course is added to a department, all students in that department are automatically registered to the course. Instructors can then edit their marks.
+  - Responsible for registering **Instructor** and **Admin** accounts.
 
 - **Instructor**
   - View course details.
   - Update and manage students’ marks in courses.
   - View department details.
+  - Account must be created by an **Admin**.
 
 - **Student**
+  - Self-register for an account.  
   - View course details.
   - View department details.
 
@@ -50,12 +53,15 @@ The project follows the **MVC (Model-View-Controller)** pattern:
 
 ## Usage
 
-1. Log in with your account credentials.  
-2. Depending on your role:  
+1. Create an account:  
+   - **Students** can self-register.  
+   - **Instructors** and **Admins** must be registered by an existing **Admin**.  
+2. Log in with your account credentials.  
+3. Depending on your role:  
    - **Admin:** Manage courses, departments, students, and user roles.  
    - **Instructor:** Manage student marks and view course/department info.  
    - **Student:** View course and department details.  
-3. The UI dynamically displays only the actions your role is allowed to perform.  
+4. The UI dynamically displays only the actions your role is allowed to perform.  
 
 ---
 
@@ -64,4 +70,3 @@ The project follows the **MVC (Model-View-Controller)** pattern:
 - Adding a course to a department automatically registers all students in that department to the course.  
 - Instructors can edit student marks.  
 - Each role sees a customized UI and can only access allowed features.  
-
